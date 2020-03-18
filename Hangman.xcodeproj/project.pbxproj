@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E182B1302404E5F20099EB72 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E182B12F2404E5F20099EB72 /* main.cpp */; };
+		E1A9235924223724005E51BB /* animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1A9235724223724005E51BB /* animation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		E182B12C2404E5F20099EB72 /* Hangman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hangman; sourceTree = BUILT_PRODUCTS_DIR; };
 		E182B12F2404E5F20099EB72 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E1A9235724223724005E51BB /* animation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = animation.cpp; sourceTree = "<group>"; };
+		E1A9235824223724005E51BB /* animation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = animation.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				E182B12F2404E5F20099EB72 /* main.cpp */,
+				E1A9235724223724005E51BB /* animation.cpp */,
+				E1A9235824223724005E51BB /* animation.hpp */,
 			);
 			path = Hangman;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A9235924223724005E51BB /* animation.cpp in Sources */,
 				E182B1302404E5F20099EB72 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

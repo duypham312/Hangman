@@ -13,6 +13,7 @@
 #include <vector>
 #include <fstream>
 #include <cctype>
+#include "animation.hpp"
 using namespace std;
 
 string generateWord();
@@ -45,8 +46,8 @@ int main() {
             return 0;
         }
         else {
-            cout << "Invalid! Please try again!" << endl << endl;
-            cout << "My choice is ";
+            cout << "Invalid! Please try again!" << endl << endl
+                 << "My choice is ";
         }
     } while (c != 'S' and c != 's' and c != 'E' and c != 'e');
     return 0;
@@ -76,8 +77,14 @@ void playHangman() {
             render(wrongGuessCount, guessedWord, wrongCharacter);
         }
     } while (wrongGuessCount < max and guessedWord != secretWord);
-    if (wrongGuessCount == max) cout << "What a pity! You lose." << endl << endl;
-    if (guessedWord == secretWord) cout << endl << "Well done! You won!" << endl << endl;
+    if (wrongGuessCount == max) {
+        cout << "What a pity! You lose." << endl << endl;
+        defeat();
+    }
+    if (guessedWord == secretWord) {
+        cout << endl << "Well done! You won!" << endl << endl;
+        victory();
+    }
 }
 
 int Restart() {
@@ -97,8 +104,8 @@ int Restart() {
             return 0;
         }
         else {
-            cout << "Invalid! Please try again!" << endl << endl;
-            cout << "My choice is ";
+            cout << "Invalid! Please try again!" << endl << endl
+                 << "My choice is ";
         }
     } while (s != 'E' and s != 'e' and s != 'N' and s != 'n');
     return 0;
@@ -233,9 +240,9 @@ void render(int wrongGuessCount, string guessedWord, string wrongCharater) {
         "  |                   \n"
         "-----                 \n"};
     
-    cout << endl << endl;
-    cout << "Unfortunately. Try again!" << endl << endl;
-    cout << "Number of wrong guesses: " << wrongGuessCount << endl << endl;
-    cout << "Wrong guess(es): " << wrongCharater << endl << endl;
-    cout << figure[wrongGuessCount] << endl << endl << guessedWord << endl << endl;
+    cout << endl << endl
+         << "Unfortunately. Try again!" << endl << endl
+         << "Number of wrong guesses: " << wrongGuessCount << endl << endl
+         << "Wrong guess(es): " << wrongCharater << endl << endl
+         << figure[wrongGuessCount] << endl << endl << guessedWord << endl << endl;
 }
