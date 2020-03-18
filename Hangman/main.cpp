@@ -80,6 +80,7 @@ void playHangman() {
     if (wrongGuessCount == max) {
         cout << "What a pity! You lose." << endl << endl;
         defeat();
+        cout << "Secret word is " << secretWord << "." << endl << endl << endl;
     }
     if (guessedWord == secretWord) {
         cout << endl << "Well done! You won!" << endl << endl;
