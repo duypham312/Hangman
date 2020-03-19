@@ -17,7 +17,7 @@ using namespace std;
 string generateWord();
 string lower(const string& s);
 string GuessedWord(const string& secretWord);
-bool check(char guess, const string& secretWord);
+bool check(const char& guess, const string& secretWord);
 char input();
 
 #endif

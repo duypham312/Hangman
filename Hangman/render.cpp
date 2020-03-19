@@ -11,7 +11,7 @@
 
 using namespace std;
 
-void render(int wrongGuessCount, string guessedWord, string wrongCharater) {
+void render(const int& wrongGuessCount, const string& guessedWord, const string& wrongCharater) {
     const string figure[] = {
         "  ----------------  \n"
         "  |                 \n"
@@ -92,7 +92,7 @@ void render(int wrongGuessCount, string guessedWord, string wrongCharater) {
          << figure[wrongGuessCount] << endl << endl << guessedWord << endl << endl;
 }
 
-void update(const string& secretWord, char guess, string& guessedWord) {
+void update(const string& secretWord, const char& guess, string& guessedWord) {
     for (int i = 0; i < secretWord.length(); i++) {
         if (secretWord[i] == guess) {
             guessedWord[i] = guess;

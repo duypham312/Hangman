@@ -14,7 +14,7 @@
 
 using namespace std;
 
-void render(int wrongGuessWord, string guessedWord, string wrongCharacter);
-void update(const string& secretWord, char guess, string& guessedWord);
+void render(const int& wrongGuessWord, const string& guessedWord, const string& wrongCharacter);
+void update(const string& secretWord, const char& guess, string& guessedWord);
 
 #endif

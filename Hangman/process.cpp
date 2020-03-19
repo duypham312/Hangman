@@ -44,7 +44,7 @@ string GuessedWord(const string& secretWord) {
     return guessedWord;
 }
 
-bool check(char guess, const string& secretWord) {
+bool check(const char& guess, const string& secretWord) {
     for (int i = 0; i < secretWord.length(); i++) {
         if (secretWord[i] == guess) return true;
     }

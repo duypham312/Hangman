@@ -17,8 +17,7 @@
 using namespace std;
 
 void clear();
-void defeat();
 void victory();
-
+void defeat();
 
 #endif

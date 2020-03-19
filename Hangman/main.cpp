@@ -26,16 +26,16 @@ int main() {
          << "1. Start - (S)" << endl
          << "2. Exit - (E)" << endl << endl
          << "My choice is ";
-    char c;
+    string c;
     do {
         cin >> c;
         cout << endl << endl;
-        if (c == 'S' or c == 's') {
+        if (c == "S" or c == "s") {
             playHangman();
             Restart();
             return 0;
         }
-        else if (c == 'E' or c == 'e') {
+        else if (c == "E" or c == "e") {
             cout << "See you again!" << endl << endl;
             return 0;
         }
@@ -43,7 +43,7 @@ int main() {
             cout << "Invalid! Please try again!" << endl << endl
                  << "My choice is ";
         }
-    } while (c != 'S' and c != 's' and c != 'E' and c != 'e');
+    } while (c != "S" and c != "s" and c != "E" and c != "e");
     return 0;
 }
 
@@ -83,7 +83,7 @@ void playHangman() {
 }
 
 void Restart() {
-    char s;
+    string s;
     cout << "Good job! Please choose an option below!" << endl << endl
          << "1. New game - (N)" << endl
          << "2. Exit - (E)" << endl << endl
@@ -91,10 +91,10 @@ void Restart() {
     do {
         cin >> s;
         cout << endl << endl;
-        if (s == 'N' or s == 'n') {
+        if (s == "N" or s == "n") {
             playHangman();
             Restart();
-        } else if (s == 'E' or s == 'e') {
+        } else if (s == "E" or s == "e") {
             cout << "See you again. <3" << endl << endl;
             return;
         }
@@ -102,6 +102,6 @@ void Restart() {
             cout << "Invalid! Please try again!" << endl << endl
                  << "My choice is ";
         }
-    } while (s != 'E' and s != 'e' and s != 'N' and s != 'n');
+    } while (s != "E" and s != "e" and s != "N" and s != "n");
     return;
 }
