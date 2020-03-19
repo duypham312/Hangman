@@ -6,6 +6,9 @@
 //  Copyright © 2020 Duy. All rights reserved.
 //
 
+#ifndef animation_hpp
+#define animation_hpp
+
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -16,3 +19,6 @@ using namespace std;
 void clear();
 void defeat();
 void victory();
+
+
+#endif

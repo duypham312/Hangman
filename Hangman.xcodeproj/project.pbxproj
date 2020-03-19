@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E17F55972423A49B00ABD9F7 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E17F55952423A49B00ABD9F7 /* render.cpp */; };
+		E17F559A2423AA6A00ABD9F7 /* process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E17F55982423AA6A00ABD9F7 /* process.cpp */; };
 		E182B1302404E5F20099EB72 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E182B12F2404E5F20099EB72 /* main.cpp */; };
 		E1A9235924223724005E51BB /* animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1A9235724223724005E51BB /* animation.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E17F55952423A49B00ABD9F7 /* render.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = render.cpp; sourceTree = "<group>"; };
+		E17F55962423A49B00ABD9F7 /* render.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = render.hpp; sourceTree = "<group>"; };
+		E17F55982423AA6A00ABD9F7 /* process.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = process.cpp; sourceTree = "<group>"; };
+		E17F55992423AA6A00ABD9F7 /* process.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = process.hpp; sourceTree = "<group>"; };
 		E182B12C2404E5F20099EB72 /* Hangman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hangman; sourceTree = BUILT_PRODUCTS_DIR; };
 		E182B12F2404E5F20099EB72 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E1A9235724223724005E51BB /* animation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = animation.cpp; sourceTree = "<group>"; };
@@ -63,6 +69,10 @@
 				E182B12F2404E5F20099EB72 /* main.cpp */,
 				E1A9235724223724005E51BB /* animation.cpp */,
 				E1A9235824223724005E51BB /* animation.hpp */,
+				E17F55952423A49B00ABD9F7 /* render.cpp */,
+				E17F55962423A49B00ABD9F7 /* render.hpp */,
+				E17F55982423AA6A00ABD9F7 /* process.cpp */,
+				E17F55992423AA6A00ABD9F7 /* process.hpp */,
 			);
 			path = Hangman;
 			sourceTree = "<group>";
@@ -124,8 +134,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E17F55972423A49B00ABD9F7 /* render.cpp in Sources */,
 				E1A9235924223724005E51BB /* animation.cpp in Sources */,
 				E182B1302404E5F20099EB72 /* main.cpp in Sources */,
+				E17F559A2423AA6A00ABD9F7 /* process.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

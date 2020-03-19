@@ -10,21 +10,15 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
-#include <vector>
-#include <fstream>
-#include <cctype>
+
 #include "animation.hpp"
+#include "render.hpp"
+#include "process.hpp"
+
 using namespace std;
 
-string generateWord();
-string lower(const string& s);
-string GuessedWord(const string& secretWord);
-int Restart();
-char input();
 void playHangman();
-void update(const string& secretWord, char guess, string& guessedWord);
-void render(int wrongGuessWord, string guessedWord, string wrongCharacter);
-bool check(char guess, const string& secretWord);
+void Restart();
 
 int main() {
     srand(static_cast<unsigned int>(time(0)));
@@ -88,7 +82,7 @@ void playHangman() {
     }
 }
 
-int Restart() {
+void Restart() {
     char s;
     cout << "Good job! Please choose an option below!" << endl << endl
          << "1. New game - (N)" << endl
@@ -102,148 +96,12 @@ int Restart() {
             Restart();
         } else if (s == 'E' or s == 'e') {
             cout << "See you again. <3" << endl << endl;
-            return 0;
+            return;
         }
         else {
             cout << "Invalid! Please try again!" << endl << endl
                  << "My choice is ";
         }
     } while (s != 'E' and s != 'e' and s != 'N' and s != 'n');
-    return 0;
-}
-
-string lower(const string& s) {
-    string s1 = s;
-    for (int i = 0; i < s.size(); i++) {
-        s1[i] = tolower(s[i]);
-    }
-    return s1;
-}
-
-string generateWord() {
-    vector <string> list;
-    ifstream file("Text.txt");
-    string word;
-    if (file.is_open()) {
-        while (file >> word) {
-            list.push_back(word);
-        }
-        file.close();
-    }
-    if (list.size() > 0) {
-        return list[rand() % (list.size())];
-    } else return "";
-}
-
-string GuessedWord(const string& secretWord) {
-    string guessedWord;
-    for (int i = 0; i < secretWord.length(); i++) {
-        guessedWord.push_back('-');
-    }
-    return guessedWord;
-}
-
-char input() {
-    cout << endl << endl << "Please enter a character " << endl << endl;
-    char input;
-    cout << "My choice is ";
-    cin >> input;
-    cout << endl << endl;
-    return tolower(input);
-}
-
-bool check(char guess, const string& secretWord) {
-    for (int i = 0; i < secretWord.length(); i++) {
-        if (secretWord[i] == guess) return true;
-    }
-    return false;
-}
-
-void update(const string& secretWord, char guess, string& guessedWord) {
-    for (int i = 0; i < secretWord.length(); i++) {
-        if (secretWord[i] == guess) {
-            guessedWord[i] = guess;
-        }
-    }
-}
-
-void render(int wrongGuessCount, string guessedWord, string wrongCharater) {
-    const string figure[] = {
-        "  ----------------    \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "-----                 \n",
-        
-        "  ----------------    \n"
-        "  |             |     \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "-----                 \n",
-        
-        "  ----------------    \n"
-        "  |             |     \n"
-        "  |             O     \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "-----                 \n",
-
-        "  ----------------    \n"
-        "  |             |     \n"
-        "  |             O     \n"
-        "  |             |     \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "-----                 \n",
-
-        "  ----------------    \n"
-        "  |             |     \n"
-        "  |             O     \n"
-        "  |            /|     \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "-----                 \n",
-
-        "  ----------------    \n"
-        "  |             |     \n"
-        "  |             O     \n"
-        "  |            /|\\   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "-----                 \n",
-
-        "  ----------------    \n"
-        "  |             |     \n"
-        "  |             O     \n"
-        "  |            /|\\   \n"
-        "  |            /      \n"
-        "  |                   \n"
-        "  |                   \n"
-        "-----                 \n",
-
-        "  ----------------    \n"
-        "  |             |     \n"
-        "  |             O     \n"
-        "  |            /|\\   \n"
-        "  |            / \\   \n"
-        "  |                   \n"
-        "  |                   \n"
-        "-----                 \n"};
-    
-    cout << endl << endl
-         << "Unfortunately. Try again!" << endl << endl
-         << "Number of wrong guesses: " << wrongGuessCount << endl << endl
-         << "Wrong guess(es): " << wrongCharater << endl << endl
-         << figure[wrongGuessCount] << endl << endl << guessedWord << endl << endl;
+    return;
 }
